@@ -41,7 +41,6 @@ async function makeReactLayout(options = {}) {
         });
 
     const $ = cheerio.load(content, {decodeEntities: false});
-    $('title').text('Title must not be empty');
     $('nav .active.nav-item').removeClass('active'); // remove highlighted link
     if (options.siteUrl) {
         $(`.nav-item a[href*="${options.siteUrl}"]`).parent('.nav-item').addClass('active');
