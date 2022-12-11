@@ -2,6 +2,9 @@
   "name": "@jenkinsci/gatsby-plugin-jenkins-layout",
   "version": "1.0.0",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.jsx .",
     "stylelint": "stylelint --fix 'src/**/*.js'",
