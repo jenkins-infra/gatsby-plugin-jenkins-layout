@@ -56,6 +56,8 @@
   },
   "files": [
     "lib/**/*",
+    "gatsby-node.js",
+    "gatsby-browser.js",
     "makeLayout.js"
   ],
   "lint-staged": {
