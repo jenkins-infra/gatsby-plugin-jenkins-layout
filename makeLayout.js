@@ -74,8 +74,6 @@ async function makeReactLayout(options = {}) {
     $('meta[content*="{{"]').remove();
     //remove title as we replace it most of the time. When we don't we dont want replaceme
     $('title').remove();
-    // padd as per https://stackoverflow.com/questions/11124777/twitter-bootstrap-navbar-fixed-top-overlapping-site
-    $('head').append('<style>{`#grid-box { position: relative; margin: 1rem auto 0; } `}</style>');
     $('head').append('<style>{`html { min-height:100%; position: relative; }`}</style>');
 
     $(`.nav-link[href="${options.siteUrl}"]`).attr('href', '/');
