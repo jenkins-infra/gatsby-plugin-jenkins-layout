@@ -8,6 +8,7 @@ const fs = require('fs/promises');
 async function makeReactLayout(options = {}) {
     options = Object.assign({}, {
         siteUrl: 'https://www.jenkins.io/',
+        githubBranch: 'master',
         headerUrl: process.env.HEADER_FILE || 'https://www.jenkins.io/template/index.html',
         extraCss: []
     }, options);
@@ -174,7 +175,7 @@ async function makeReactLayout(options = {}) {
             } else if (node.name === 'jio-navbar') {
                 jsxLines.push(`<jio-navbar className="fixed-top" property=${JSON.stringify(options.siteUrl)}></jio-navbar>`);
             } else if (node.name === 'jio-footer') {
-                jsxLines.push(`<jio-footer githubBranch="master" githubRepo={githubRepo} property=${JSON.stringify(options.siteUrl)} sourcePath={sourcePath}></jio-footer>`);
+                jsxLines.push(`<jio-footer githubBranch="master" githubRepo={githubRepo} property=${JSON.stringify(options.siteUrl)} sourcePath={sourcePath} githubBranch=${JSON.stringify(options.githubBranch)}></jio-footer>`);
             } else {
                 jsxLines.push(`${prefix}<${node.name} ${attrs} />`);
             }
