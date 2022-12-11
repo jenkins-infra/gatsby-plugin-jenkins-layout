@@ -45,4 +45,5 @@ jobs:
         sarif_file: eslint-results.sarif
         wait-for-processing: true
 
-    - run: npm test
+    - name: Test
+      run: npm run test --if-present
