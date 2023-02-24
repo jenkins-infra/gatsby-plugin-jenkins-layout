@@ -1,5 +1,4 @@
 name: Build
-
 on:
   workflow_dispatch: {}
   push:
@@ -12,38 +11,26 @@ on:
       - main
       - alpha
       - beta
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: 'lts/*'
-        cache: 'npm'
-
-    - name: Install dependencies
-      run: npm ci
-
-    - run: npm run build --if-present
-
-    - name: Run ESLint
-      run: npx eslint
-        --config .eslintrc.js
-        --ext .js,.jsx,.ts,.tsx
-        --format @microsoft/eslint-formatter-sarif
-        --output-file eslint-results.sarif
-        .
-      continue-on-error: true
-
-    - name: Upload analysis results to GitHub
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: eslint-results.sarif
-        wait-for-processing: true
-
-    - name: Test
-      run: npm run test --if-present
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - run: npm run build --if-present
+      - name: Run ESLint
+        run: npx eslint --config .eslintrc.js --ext .js,.jsx,.ts,.tsx --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif .
+        continue-on-error: true
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: eslint-results.sarif
+          wait-for-processing: true
+      - name: Test
+        run: npm run test --if-present
