@@ -48,14 +48,12 @@ pipeline {
       steps {
         sh '''
           npx eslint --format checkstyle . > eslint-results.json
-          npx stylelint --custom-formatter ./node_modules/stylelint-checkstyle-formatter src/**/*.css -o stylelint-results.json
         '''
       }
       post {
         always {
           recordIssues(tools: [
               esLint(pattern: 'eslint-results.json'),
-              styleLint(pattern: 'stylelint-results.json')
           ])
         }
       }
