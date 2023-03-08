@@ -7,7 +7,6 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.jsx .",
-    "stylelint": "stylelint --fix 'src/**/*.js'",
     "build": "exit 0",
     "semantic-release": "semantic-release"
   },
