@@ -63,7 +63,6 @@ pipeline {
       steps {
         sh '''
           npm run build --if-present
-          npm run build-storybook
         '''
       }
     }
