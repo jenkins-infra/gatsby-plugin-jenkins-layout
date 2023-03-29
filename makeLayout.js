@@ -166,7 +166,7 @@ async function makeReactLayout(options = {}) {
             } else if (node.name === 'reportaproblem') {
                 jsxLines.push(`${prefix}<ReportAProblem sourcePath={sourcePath} githubRepo={githubRepo} reportAProblemTemplate={reportAProblemTemplate} />`);
             } else if (node.name === 'jio-navbar') {
-                jsxLines.push(`<jio-navbar className="fixed-nav" property=${JSON.stringify(options.siteUrl)}></jio-navbar>`);
+                jsxLines.push(`<jio-navbar class="fixed-nav" property=${JSON.stringify(options.siteUrl)}></jio-navbar>`);
             } else if (node.name === 'jio-footer') {
                 jsxLines.push(`<jio-footer githubRepo={sourcePath ? githubRepo : ''} property=${JSON.stringify(options.siteUrl)} sourcePath={sourcePath} githubBranch=${JSON.stringify(options.githubBranch)} reportAProblemTemplate=${JSON.stringify(options.reportAProblemTemplate)}></jio-footer>`);
             } else {
