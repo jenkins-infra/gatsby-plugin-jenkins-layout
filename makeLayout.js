@@ -11,7 +11,8 @@ async function makeReactLayout(options = {}) {
         githubBranch: 'master',
         reportAProblemTemplate: '',
         headerUrl: process.env.HEADER_FILE || 'https://www.jenkins.io/template/index.html',
-        extraCss: []
+        extraCss: [],
+        manifest: {},
     }, options);
     const manifestUrl = new URL('/site.webmanifest', options.headerUrl).toString();
 
@@ -212,10 +213,14 @@ async function makeReactLayout(options = {}) {
             if (results.status !== 200) {
                 throw results.data;
             }
+
+            results.data.start_url = options.siteUrl || 'https://www.jenkins.io';
+
+            Object.assign(results.data, options.manifest);
+
             results.data.icons.forEach(icon => {
                 icon.src = new URL(icon.src, manifestUrl).toString();
             });
-            results.data.start_url = options.siteUrl || 'https://www.jenkins.io';
             return JSON.stringify(results.data);
         });
 
