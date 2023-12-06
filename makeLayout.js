@@ -25,7 +25,6 @@ async function makeReactLayout(options = {}) {
         'import React from \'react\';',
         'import {useStaticQuery, graphql} from \'gatsby\';',
         'import {Helmet} from \'react-helmet\';',
-        // 'import {SiteVersion, ReportAProblem, ImproveThisPage} from \'@halkeye/jenkins-io-react\';',
         'import \'./layout.css\';',
     ];
 
