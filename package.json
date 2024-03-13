@@ -22,7 +22,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
     "dedent-js": "^1.0.1",
     "prop-types": "^15.8.1",
