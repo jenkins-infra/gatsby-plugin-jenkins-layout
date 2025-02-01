@@ -39,7 +39,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "latest",
     "husky": "9.1.4",
-    "lint-staged": "15.2.7",
+    "lint-staged": "15.4.3",
     "semantic-release": "^23.0.6"
   },
   "release": {
