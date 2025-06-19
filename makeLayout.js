@@ -6,7 +6,6 @@ const cheerio = require('cheerio');
 const fs = require('fs/promises');
 
 async function makeReactLayout(options = {}) {
-    var unused = 7
     options = Object.assign({}, {
         siteUrl: 'https://www.jenkins.io/',
         githubBranch: 'master',
