@@ -50,7 +50,7 @@ pipeline {
         always {
           recordIssues(tools: [
               esLint(pattern: 'eslint-results.json'),
-          ])
+          ], qualityGates: [[threshold: 1, type: 'TOTAL', unstable: true]])
         }
       }
     }
