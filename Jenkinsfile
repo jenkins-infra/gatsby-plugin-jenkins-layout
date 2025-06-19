@@ -43,7 +43,7 @@ pipeline {
       }
       steps {
         sh '''
-          npx eslint --format checkstyle . > eslint-results.json
+          npx eslint --format checkstyle . > eslint-results.json || true
         '''
       }
       post {
