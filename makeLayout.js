@@ -128,6 +128,9 @@ async function makeReactLayout(options = {}) {
         }
         let attrs = Object.entries(node.attribs || {}).map(([key, val]) => {
             key = keyConversion[key] || key;
+            if (val === '') {
+                return key;
+            }
             if (key === 'style') {
                 return `${key}={${JSON.stringify(styleToObject(val))}}`;
             }
