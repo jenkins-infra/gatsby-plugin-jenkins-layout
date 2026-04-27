@@ -180,13 +180,11 @@ async function makeReactLayout(options = {}) {
     };
 
     jsxLines.push('export default function Layout({ children, id, sourcePath}) {');
-    jsxLines.push(`   const {site: { buildTime, siteMetadata: { githubRepo, siteUrl }}} = useStaticQuery(graphql\`
+    jsxLines.push(`   const {site: { siteMetadata: { githubRepo }}} = useStaticQuery(graphql\`
         query {
             site {
-                buildTime
                 siteMetadata {
                     githubRepo
-                    siteUrl
                 }
             }
         }
