@@ -6,7 +6,8 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "eslint --ext .js,.jsx .",
+    "lint": "npx eslint --format checkstyle . | tee -a eslint-results.json",
+    "lint-local": "eslint --ext .js,.jsx .",
     "build": "exit 0",
     "semantic-release": "semantic-release"
   },

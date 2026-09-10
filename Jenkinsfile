@@ -1,3 +1,10 @@
+@Library('pipeline-library@pull/1055/head') _
+
+buildWebsite([
+  releaseToNpmFromBranches: ['main', 'beta', 'alpha'],
+])
+
+/*
 // Do not trigger daily if not on the principal branch (e.g. not on PR, not on other branches, not on tags)
 String cronPattern = env.BRANCH_IS_PRIMARY ? '@daily' : ''
 
@@ -101,3 +108,4 @@ pipeline {
     }
   }
 }
+*/
