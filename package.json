@@ -41,7 +41,7 @@
     "eslint-plugin-react": "latest",
     "husky": "9.1.7",
     "lint-staged": "16.2.3",
-    "semantic-release": "^24.2.6"
+    "semantic-release": "^25.0.0"
   },
   "release": {
     "branches": [
